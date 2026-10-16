@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FlipKart Homepage</title>
+
+</head>
+<style>
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f3f6;
+    color: #222;
+}
+
+
+
+header {
+    background: #2874f0;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 7%;
+    gap: 25px;
+}
+
+.logo {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #ffe500;
+}
+
+
+
+
+.search {
+    display: flex;
+    width: 45%;
+    height: 40px;
+}
+
+.search input {
+    width: 100%;
+    border: none;
+    outline: none;
+
+    padding: 0 15px;
+    font-size: 14px;
+}
+
+.search button {
+    width: 50px;
+    border: none;
+    background: white;
+    cursor: pointer;
+}
+
+
+
+.login {
+    background: white;
+    color: #2874f0;
+
+    border: none;
+
+    padding: 10px 30px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.cart {
+    margin-left: auto;
+}
+
+
+
+.categories {
+    background: white;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 45px;
+
+    padding: 18px 20px;
+
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.category {
+    text-align: center;
+    cursor: pointer;
+}
+
+.category img {
+    width: 75px;
+    height: 75px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+  
+}
+
+.category p {
+    margin-top: 8px;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+
+
+.banner-text {
+    padding-left: 8%;
+}
+
+.banner-text h1 {
+    font-size: 42px;
+
+    color: #2874f0;
+
+    margin-bottom: 15px;
+}
+
+.banner-text p {
+    font-size: 18px;
+
+    color: #555;
+
+    margin-bottom: 25px;
+}
+
+.banner-text button {
+    background: #ff9f00;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 25px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.banner-text button:hover {
+    background: #fb8c00;
+}
+
+.banner img {
+    width: 45%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+
+
+.products {
+    background: white;
+
+    margin: 15px;
+
+    padding: 25px;
+}
+
+
+
+
+.heading {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #ddd;
+
+    padding-bottom: 15px;
+
+    margin-bottom: 25px;
+}
+
+.heading h2 {
+    font-size: 24px;
+}
+
+.heading button {
+    background: #2874f0;
+
+    color: white;
+
+    border: none;
+
+    padding: 10px 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.heading button:hover {
+    background: #1765df;
+}
+
+
+
+.product-container {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 20px;
+}
+
+
+
+
+.product {
+    text-align: center;
+
+    padding: 15px;
+
+    border: 1px solid #eee;
+
+    background: white;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.product img {
+    width: 100%;
+    height: 170px;
+
+    object-fit: cover;
+
+    margin-bottom: 15px;
+}
+
+.product h3 {
+    font-size: 16px;
+
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 18px;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+}
+
+.offer {
+    color: #388e3c;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+
+footer {
+    background: #172337;
+
+    color: white;
+
+    padding: 45px 8%;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 40px;
+}
+
+.footer-column {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.footer-column h3 {
+    color: #878787;
+
+    font-size: 14px;
+
+    margin-bottom: 8px;
+}
+
+.footer-column a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    border-top: 1px solid #444;
+
+    padding-top: 20px;
+
+    color: #aaaa;
+
+    font-size: 13px;
+}
+
+
+
+</style>
+
+<body>
+
+  
+    <header>
+
+        <div class="logo">
+            Flip<span>Kart</span>
+        </div>
+
+        <div class="search">
+            <input type="text" placeholder="Search for products, brands and more">
+            <button>🔍</button>
+        </div>
+
+        <button class="login">
+            Login
+        </button>
+
+        <a href="#">Become a Seller</a>
+
+        <a href="#" class="cart">
+            🛒 Cart
+        </a>
+
+    </header>
+
+
+   
+    <section class="categories">
+
+        <div class="category">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" width="500" height="500">
+            <p>Watches</p>
+        </div>
+
+        <div class="category">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" width="500" height="500">
+            <p>Shoes</p>
+        </div>
+
+        <div class="category">
+            <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" width="500" height="500">
+            <p>Cameras</p>
+        </div>
+
+      
+
+        
+
+        <div class="category">
+            <img src="https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc" width="500" height="500">
+            <p>Perfumes</p>
+        </div>
+
+        <div class="category">
+            <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62" width="500" height="500">
+            <p>Bags</p>
+        </div>
+
+    </section>
+
+
+  
+    <section class="banner">
+
+        <div class="banner-text">
+
+            <h1>
+                Big Shopping Sale
+            </h1>
+
+            <p>
+                Get amazing discounts on your favourite products
+            </p>
+
+            <button>
+                Shop Now
+            </button>
+
+        </div>
+
+        <img
+            src="https://images.unsplash.com/photo-1607082349566-187342175e2f"
+            alt="Shopping"
+            width="500"
+            height="500">
+
+    </section>
+
+
+
+    <section class="products">
+
+        <div class="heading">
+
+            <h2>
+                Best Deals
+            </h2>
+
+            <button>
+                VIEW ALL
+            </button>
+
+        </div>
+
+
+        <div class="product-container">
+
+
+        
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1523275335684-37898b6baf30"
+                    alt="Watch"
+                    width="500"
+                    height="500">
+
+                <h3>
+                    Premium Watch
+                </h3>
+
+                <p class="price">
+                    ₹1,299
+                </p>
+
+                <p class="offer">
+                    40% off
+                </p>
+
+            </div>
+
+
+        
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff"
+                    alt="Shoes"
+                    width="500"
+                    height="500">
+
+                <h3>
+                    Running Shoes
+                </h3>
+
+                <p class="price">
+                    ₹1,799
+                </p>
+
+                <p class="offer">
+                    35% off
+                </p>
+
+            </div>
+
+
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f"
+                    alt="Camera"
+                    width="500"
+                    height="500">
+
+                <h3>
+                    Digital Camera
+                </h3>
+
+                <p class="price">
+                    ₹12,999
+                </p>
+
+                <p class="offer">
+                    25% off
+                </p>
+
+            </div>
+
+
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef"
+                    alt="Laptop"
+                    width="500"
+                    height="500">
+
+                <h3>
+                    Laptop
+                </h3>
+
+                <p class="price">
+                    ₹45,999
+                </p>
+
+                <p class="offer">
+                    20% off
+                </p>
+
+            </div>
+
+
+    
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9"
+                    alt="Mobile"
+                    width="500"
+                    height="500">
+
+                <h3>
+                    Smartphone
+                </h3>
+
+                <p class="price">
+                    ₹18,999
+                </p>
+
+                <p class="offer">
+                    30% off
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <section class="products">
+
+        <div class="heading">
+
+            <h2>
+                Electronics
+            </h2>
+
+            <button>
+                VIEW ALL
+            </button>
+
+        </div>
+
+
+        <div class="product-container">
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e"
+                    alt="Headphones"
+                    width="500"
+                    height="500">
+
+                <h3>
+                    Wireless Headphones
+                </h3>
+
+                <p class="price">
+                    ₹1,499
+                </p>
+
+                <p class="offer">
+                    45% off
+                </p>
+
+            </div>
+
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed"
+                    alt="Laptop"
+                    width="500"
+                    height="500">
+
+                <h3>
+                    Gaming Laptop
+                </h3>
+
+                <p class="price">
+                    ₹59,999
+                </p>
+
+                <p class="offer">
+                    15% off
+                </p>
+
+            </div>
+
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1546435770-a3e426bf472b"
+                    alt="Headphones"
+                    width="500"
+                    height="500">
+
+                <h3>
+                    Bluetooth Headset
+                </h3>
+
+                <p class="price">
+                    ₹899
+                </p>
+
+                <p class="offer">
+                    50% off
+                </p>
+
+            </div>
+
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1550745165-9bc0b252726f"
+                    alt="Gaming"
+                    width="500"
+                    height="500">
+
+                <h3>
+                    Gaming Console
+                </h3>
+
+                <p class="price">
+                    ₹29,999
+                </p>
+
+                <p class="offer">
+                    18% off
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <footer>
+
+        <div class="footer-column">
+
+            <h3>
+                About
+            </h3>
+
+            <a href="#">Contact Us</a>
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+
+     </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Help
+            </h3>
+
+            <a href="#">Payments</a>
+            <a href="#">Shipping</a>
+            <a href="#">Returns</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Consumer Policy
+            </h3>
+
+            <a href="#">Terms of Use</a>
+            <a href="#">Privacy</a>
+            <a href="#">Security</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Social
+            </h3>
+
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 FlipStore. All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
